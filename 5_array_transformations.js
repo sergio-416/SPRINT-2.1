@@ -2,29 +2,37 @@
 
 console.log('Exercise 5');
 
-const arr8 = [1, 2, 3, 4];
-const squared = arr8.map(num => num * num);
-console.log(squared);
+function squared(arr) {
+	return arr.map(num => num * num);
+}
+console.log(squared([1, 2, 3, 4]));
 
-const arr9 = [1, 2, 3, 4];
-const even = arr9.filter(num => num % 2 === 0);
-console.log(even);
+function evens(arr) {
+	return arr.filter(num => num % 2 === 0);
+}
+console.log(evens([1, 2, 3, 4]));
 
-const arr10 = [1, 10, 8, 11];
-const biggerThanTen = arr10.find(num => num > 10);
-console.log(biggerThanTen);
+function biggerThanTen(arr) {
+	return arr.find(num => num > 10);
+}
+console.log(biggerThanTen([1, 10, 8, 11]));
 
-const arr11 = [13, 7, 8, 21];
-const totalSum = arr11.reduce((accumulator, num) => accumulator + num, 0);
+function sum3(arr) {
+	return arr.reduce((accumulator, num) => accumulator + num, 0);
+}
+console.log(sum3([13, 7, 8, 21]));
 
-const arr12 = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
-const finalResult = arr12
-	.filter(num => num >= 10)
-	.map(num => num * 2)
-	.reduce((accumulator, num) => accumulator + num, 0);
-console.log(finalResult);
+function multipleMethods(arr) {
+	return arr
+		.filter(num => num >= 10)
+		.map(num => num * 2)
+		.reduce((accumulator, num) => accumulator + num, 0);
+}
+console.log(multipleMethods([1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9]));
 
-const arr13 = [11, 12, 13, 14];
-const allBigger = arr13.every(num => num > 10);
-const someBigger = arr13.some(num => num > 10);
-console.log(allBigger, someBigger);
+function checkBiggerThanTen(arr) {
+	const allBigger = arr.every(num => num > 10);
+	const someBigger = arr.some(num => num > 10);
+	return { allBigger, someBigger };
+}
+console.log(checkBiggerThanTen([11, 12, 13, 14]));
