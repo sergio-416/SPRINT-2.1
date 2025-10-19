@@ -2,12 +2,12 @@
 
 console.log('Exercise 1');
 
-let num1 = Math.floor(Math.random() * 10);
-let num2 = Math.floor(Math.random() * 10);
-const sum1 = (a, b) => {
-	return a + b;
+const sum1 = () => {
+	let num1 = Math.floor(Math.random() * 10);
+	let num2 = Math.floor(Math.random() * 10);
+	return num1 + num2;
 };
-console.log(`The sum is: ${sum1(num1, num2)}`);
+console.log(`The sum is: ${sum1()}`);
 
 const randomNumber = () => {
 	return Math.floor(Math.random() * 100);
@@ -25,13 +25,15 @@ class Person {
 const person = new Person('Alice');
 person.greet();
 
-const arr1 = [1, 2, 3, 4, 5];
-const printNumbers = numbers => {
+const printNumbers = () => {
+	const numbers = [1, 2, 3, 4, 5];
+	const results = [];
 	for (let i = 0; i < numbers.length; i++) {
-		console.log(`Number: ${numbers[i]}`);
+		results.push(numbers[i]);
 	}
+	return results;
 };
-printNumbers(arr1);
+console.log(printNumbers());
 
 const printDelayedMessage = () =>
 	setTimeout(() => console.log('Three seconds have passed!'), 3000);

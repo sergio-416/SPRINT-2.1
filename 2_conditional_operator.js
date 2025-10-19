@@ -2,20 +2,26 @@
 
 console.log('Exercise 2');
 
-let age = Math.floor(Math.random() * 40);
-function canDrive(age) {
+function canDrive() {
+	let age = Math.floor(Math.random() * 40);
 	return age >= 18 ? 'You can drive' : "You can't drive";
 }
-console.log(canDrive(age));
+console.log(canDrive());
 
-let num3 = Math.floor(Math.random() * 100);
-let num4 = Math.floor(Math.random() * 100);
-console.log(num3 > num4 ? 'num3 is greater' : 'num4 is greater');
+function compareNumbers() {
+	let num1 = Math.floor(Math.random() * 100);
+	let num2 = Math.floor(Math.random() * 100);
+	return num1 > num2 ? `${num1} is greater` : `${num2} is greater`;
+}
+console.log(compareNumbers());
 
-let number = Math.floor(Math.random() * 21) - 10;
-console.log(
-	`The number is ${number > 0 ? 'positive' : number < 0 ? 'negative' : 'zero'}`
-);
+function checkNumber() {
+	let number = Math.floor(Math.random() * 21) - 10;
+	return `The number is ${
+		number > 0 ? 'positive' : number < 0 ? 'negative' : 'zero'
+	}`;
+}
+console.log(checkNumber());
 
 let a = Math.floor(Math.random() * 10);
 let b = Math.floor(Math.random() * 10);

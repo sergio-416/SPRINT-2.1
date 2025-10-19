@@ -3,21 +3,22 @@
 console.log('Exercise 3');
 
 function process(name, callback) {
-	callback(name);
+	return callback(name);
 }
 function printName(name) {
-	console.log(`Hi, I'm ${name}`);
+	return `Hi, I'm ${name}`;
 }
-process('Marc', printName);
+console.log(process('Marc', printName));
 
 let num5 = Math.floor(Math.random() * 10);
 let num6 = Math.floor(Math.random() * 10);
 function calc(a, b, callback) {
-	callback(a, b);
+	return callback(a, b);
 }
-calc(num5, num6, function (x, y) {
-	console.log('The sum is:', x + y);
+const result = calc(num5, num6, function (x, y) {
+	return x + y;
 });
+console.log('The sum is:', result);
 
 function waitAndGreet(name, callback) {
 	setTimeout(function () {
