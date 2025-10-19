@@ -4,7 +4,8 @@ console.log('Exercise 2');
 
 function canDrive() {
 	let age = Math.floor(Math.random() * 40);
-	return age >= 18 ? 'You can drive' : "You can't drive";
+	const legalAge = 18;
+	return age >= legalAge ? 'You can drive' : "You can't drive";
 }
 console.log(canDrive());
 
@@ -23,19 +24,20 @@ function checkNumber() {
 }
 console.log(checkNumber());
 
-let a = Math.floor(Math.random() * 10);
-let b = Math.floor(Math.random() * 10);
-let c = Math.floor(Math.random() * 10);
-function findMax(a, b, c) {
+function findMax() {
+	let a = Math.floor(Math.random() * 10);
+	let b = Math.floor(Math.random() * 10);
+	let c = Math.floor(Math.random() * 10);
 	return a > b ? (a > c ? a : c) : b > c ? b : c;
 }
-console.log(`The maximum value is: ${findMax(a, b, c)}`);
+console.log(`The maximum value is: ${findMax()}`);
 
 function evenOrOdd(numbers) {
-	let results = [];
+	const result = [];
 	for (let i = 0; i < numbers.length; i++) {
-		results.push(numbers[i] % 2 === 0 ? 'even' : 'odd');
+		const isEven = numbers[i] % 2 === 0;
+		result.push(isEven ? 'even' : 'odd');
 	}
-	return results;
+	return result;
 }
-console.log(`The even/odd results are: ${evenOrOdd([a, b, c]).join(', ')}`);
+console.log(`Numbers are: ${evenOrOdd([1, 2, 5, 8, 13, 21, 34]).join(', ')}`);

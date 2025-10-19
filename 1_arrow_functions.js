@@ -25,15 +25,15 @@ class Person {
 const person = new Person('Alice');
 person.greet();
 
-const printNumbers = () => {
-	const numbers = [1, 2, 3, 4, 5];
+const printNumbers = (numbers = []) => {
 	const results = [];
 	for (let i = 0; i < numbers.length; i++) {
-		results.push(numbers[i]);
+		const processNumber = num => num;
+		results.push(processNumber(numbers[i]));
 	}
 	return results;
 };
-console.log(printNumbers());
+printNumbers([1, 2, 3, 4, 5]).forEach(num => console.log(num));
 
 const printDelayedMessage = () =>
 	setTimeout(() => console.log('Three seconds have passed!'), 3000);
