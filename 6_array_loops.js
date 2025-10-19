@@ -2,31 +2,43 @@
 
 console.log('Exercise 6');
 
-const arr14 = ['Eva', 'Julia', 'Michael'];
-arr14.forEach(name => console.log(name));
-
-const arr15 = ['Adam', 'Frances', 'Clara'];
-for (const name of arr15) {
-	console.log(name);
+function printForEach(arr) {
+	arr.forEach(name => console.log(name));
 }
+printForEach(['Eva', 'Julia', 'Michael']);
 
-const arr16 = [1, 2, 3, 4, 5, 6];
-const evenNumbers = arr16.filter(num => num % 2 === 0);
-
-const obj6 = { name: 'Olivia', age: 25, city: 'Barcelona' };
-for (const key in obj6) {
-	console.log(`${key}: ${obj6[key]}`);
-}
-
-const arr17 = [1, 2, 3, 4, 5, 6];
-for (const num of arr17) {
-	if (num === 5) {
-		break;
+function printForOf1(arr) {
+	for (const name of arr) {
+		console.log(name);
 	}
-	console.log(num);
 }
+printForOf1(['Adam', 'Frances', 'Clara']);
 
-const arr18 = ['Angelo', 'Chris', 'Bill'];
-for (const [index, name] of arr18.entries()) {
-	console.log(`Index: ${index}, Name: ${name}`);
+function printFilter(arr) {
+	return arr.filter(num => num % 2 === 0);
 }
+console.log(printFilter([1, 2, 3, 4, 5, 6]));
+
+function printForIn(obj) {
+	for (const key in obj) {
+		console.log(`${key}: ${obj[key]}`);
+	}
+}
+printForIn({ name: 'Olivia', age: 25, city: 'Barcelona' });
+
+function printForOf2(arr) {
+	for (const num of arr) {
+		if (num === 5) {
+			break;
+		}
+		console.log(num);
+	}
+}
+printForOf2([1, 2, 3, 4, 5, 6]);
+
+function printForOf3(arr) {
+	for (const [index, name] of arr.entries()) {
+		console.log(`Index: ${index}, Name: ${name}`);
+	}
+}
+printForOf3(['Angelo', 'Chris', 'Bill']);
